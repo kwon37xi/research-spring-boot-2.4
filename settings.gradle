@@ -1,0 +1,6 @@
+rootProject.name = 'research-springboot-2-3'
+
+include "research-spring-data-jpa"
+include "research-spring-data-jdbc"
+include "research-spring-webmvc"
+include "research-jackson-json"

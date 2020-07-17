@@ -1,0 +1,11 @@
+* text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.java text
+*.groovy text
+*.md text
+*.properties text eol=lf
+*.xml text eol=lf
+*.sql text eol=lf
+gradlew text
+LICENSE text
