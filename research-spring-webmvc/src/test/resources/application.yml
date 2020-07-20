@@ -1,0 +1,5 @@
+debug: true
+logging:
+    level:
+        org.springframework: debug
+        okhttp3: trace
