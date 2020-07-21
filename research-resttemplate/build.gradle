@@ -1,4 +1,0 @@
-// RestTemplate 은 spring-web 의존성만으로 생성된다.
-dependencies {
-	implementation 'org.springframework:spring-web'
-}
