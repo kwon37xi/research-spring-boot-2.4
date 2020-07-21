@@ -23,8 +23,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * {@link RestTemplate}을 직접 생성하는 경우에 대한 테스트가 아니다.
  *
  * {@link RestTemplate} 을 직접 테스트하고자 한다면, {@code @AutoConfigureWebClient(registerRestTemplate = true)} 설정이 필요하다.
- * </p>
- * {@link org.springframework.test.web.client.MockRestServiceServer} 가 기본 설정되기 때문에 실제 요청을 전달이 안되는데,
+ * <p>
+ * {@link org.springframework.test.web.client.MockRestServiceServer} 가 기본 설정되기 때문에 실제 요청은 서버로 전달이 안되는데,
  * 실 서버로 요청을 하려면 {@code @AutoConfigureMockRestServiceServer(enabled = false)}가 필요하다.
  *
  * @see RestClientTest
@@ -45,6 +45,5 @@ class RestTemplateConfigTest {
         assertThat(res.getStatusCode()).isEqualTo(HttpStatus.OK);
         HashMap body = res.getBody();
         log.info("body : {}", body);
-
     }
 }
