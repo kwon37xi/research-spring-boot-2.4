@@ -1,0 +1,37 @@
+###
+# 단건
+GET http://localhost:8080/squiggly/users/1
+Accept: application/json
+
+###
+# 단건, fields
+GET http://localhost:8080/squiggly/users/2?_fields=id,name,friendNum,email,birthday
+Accept: application/json
+
+
+###
+# 단건, nested
+GET http://localhost:8080/squiggly/users/2?_fields=id,name,friendNum,email,hobbies
+Accept: application/json
+
+
+###
+# 단건, nested fields
+GET http://localhost:8080/squiggly/users/2?_fields=id,name,friendNum,email,hobbies[name,price]
+Accept: application/json
+
+###
+# 전체 목록
+GET http://localhost:8080/squiggly/users?_fields=id,name,friendNum,birthday,hobbies[name,daysPerMonth]
+Accept: application/json
+
+###
+# 에러,
+GET http://localhost:8080/squiggly/error
+Accept: application/json
+
+
+###
+# 에러, fields
+GET http://localhost:8080/squiggly/error?_fields=code,ref
+Accept: application/json
