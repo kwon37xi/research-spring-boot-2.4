@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -31,6 +32,7 @@ public class SquigglyWebMvcConfig implements Jackson2ObjectMapperBuilderCustomiz
     public FilterRegistrationBean squigllyRequestFilter() {
         FilterRegistrationBean filter = new FilterRegistrationBean();
         filter.setFilter(new SquigglyRequestFilter());
+        filter.setUrlPatterns(List.of("/squiggly/*"));
         return filter;
     }
 

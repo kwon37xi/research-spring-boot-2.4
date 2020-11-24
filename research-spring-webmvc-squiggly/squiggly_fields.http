@@ -14,7 +14,6 @@ Accept: application/json
 GET http://localhost:8080/squiggly/users/2?_fields=id,name,friendNum,email,hobbies
 Accept: application/json
 
-
 ###
 # 단건, nested fields
 GET http://localhost:8080/squiggly/users/2?_fields=id,name,friendNum,email,hobbies[name,price]
@@ -34,4 +33,15 @@ Accept: application/json
 ###
 # 에러, fields
 GET http://localhost:8080/squiggly/error?_fields=code,ref
+Accept: application/json
+
+###
+# hello
+GET http://localhost:8080/hello
+Accept: application/json
+
+
+###
+# hello, fields - filter 의 URLPattern이 /squiggly/* 라서 hello 에는 적용 안돼야함.
+GET http://localhost:8080/hello?_fields=id,name,hobbies[name]
 Accept: application/json

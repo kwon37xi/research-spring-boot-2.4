@@ -44,6 +44,7 @@ public class SquigglyController {
 
     @GetMapping("/error")
     public ErrorResponse error() {
-        return ErrorResponse.builder().code("SQ0003").desc("아무거나 막 내는 에러").ref("http://blahblah...").build();
+        throw new IllegalArgumentException("내맘대로 내보는 에러!!");
     }
+
 }

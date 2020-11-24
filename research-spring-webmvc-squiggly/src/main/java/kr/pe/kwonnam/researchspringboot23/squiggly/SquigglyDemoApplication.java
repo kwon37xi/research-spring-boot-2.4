@@ -22,6 +22,7 @@ import java.util.Map;
 public class SquigglyDemoApplication {
 
     public static final String JSON_RESPONSE_FILTER_QUERY_PARAM_NAME = "_fields";
+    public static final String ALL_FIELDS = "**";
 
     public static void main(String[] args) {
         final ConfigurableApplicationContext context = SpringApplication.run(SquigglyDemoApplication.class, args);
@@ -33,7 +34,8 @@ public class SquigglyDemoApplication {
                 protected String customizeFilter(String filter, HttpServletRequest request, Class beanClass) {
                     log.info("current filter : {}, beanClass : {}", filter, beanClass);
                     if (filter != null && ErrorResponse.class.isAssignableFrom(beanClass)) {
-                        return "";
+                        log.info("ALL FIELDS 적용 : {}", beanClass);
+                        return ALL_FIELDS;
                     }
                     return filter;
                 }
