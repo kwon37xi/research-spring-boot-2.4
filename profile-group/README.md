@@ -1,5 +1,16 @@
 # Spring Boot 2.4 multi module properties & profile-group
 * [Spring Boot Config Data Migration Guide · spring-projects/spring-boot Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Config-Data-Migration-Guide)
+* SpringBoot 2.4 부터 Multi Module Spring Boot 프로젝트에서 여러 모듈의 properties 설정을 배포 모듈(web, batch 등)에서 모아서 반영하는 방법을 합리적으로 지원해 주기 시작했다.
+
+## 실행해보기
+```
+# local profile 로 실행
+SPRING_PROFILES_ACTIVE=local ./gradlew :profile-group:profile-group-web:bootRun
+
+# prod profile 로 실행
+SPRING_PROFILES_ACTIVE=prod ./gradlew :profile-group:profile-group-web:bootRun
+```
+* http://localhost:8080 으로 접속하여 프라퍼티 값들을 확인해 본다.
 
 ## 기본 방식
 * 의존 모듈 : 프로젝트의 공통 코드를 가지고 있고, 다른 web/batch 등의 모듈에 의존성이 걸려서 배포되는 모듈
