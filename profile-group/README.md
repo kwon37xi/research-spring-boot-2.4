@@ -1,5 +1,6 @@
 # Spring Boot 2.4 multi module properties & profile-group
 * [Spring Boot Config Data Migration Guide · spring-projects/spring-boot Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Config-Data-Migration-Guide)
+* [Config file processing in Spring Boot 2.4](https://spring.io/blog/2020/08/14/config-file-processing-in-spring-boot-2-4)
 * SpringBoot 2.4 부터 Multi Module Spring Boot 프로젝트에서 여러 모듈의 properties 설정을 배포 모듈(web, batch 등)에서 모아서 반영하는 방법을 합리적으로 지원해 주기 시작했다.
 
 ## 실행해보기
