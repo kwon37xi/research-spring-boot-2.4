@@ -40,7 +40,7 @@ SPRING_PROFILES_ACTIVE=local SERVER_PORT=8888 ./gradlew :profile-group:profile-g
 ## 전략 1 - 모든 properties yml 에서 profile 을 일관성있게 `local,develop,prod` 형태로 맞춘다.
 이 경우배포 모듈에서는 다른 모듈의 yml 파일을 import 만 해주면 된다.
 
-### 의존 모듈 application.yml
+### 의존 모듈 application yml(module1.yml, module2.yml)
 ```
 # 이 부분은 프로필 혹은 배포 모듈에서 오버라이드 하지 않으면 적용되는 프라퍼티들
 profile-group:
@@ -90,7 +90,7 @@ profile-group 을 지정해준다.
 * 그러나 이는 충분히 프로필을 일치시키고 배포 모듈에서 의존 모듈의 프라퍼티를 override 하는
   기법으로 대체 가능함.
 
-### 의존 모듈 application.yml
+### 의존 모듈 application yml(module1.yml, module2.yml)
 ```
 ---
 spring:
