@@ -5,4 +5,4 @@
 * [Spring Boot Config Data Migration Guide · spring-projects/spring-boot Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Config-Data-Migration-Guide)
 
 ## multi module properties & profile group
-* [Spring Boot 2.4 - multi module properties & profile group](profile-group/README.md)
+* [Spring Boot 2.4 - multi module properties & profile group](profile-group)
