@@ -29,6 +29,8 @@ SPRING_PROFILES_ACTIVE=local SERVER_PORT=8888 ./gradlew :profile-group:profile-g
 어떤 전략이든 배포 모듈(web,batch,integration test 등)은 import 한
 다른 모듈의 프라퍼티를 자신의 프라퍼티 설정에서 오버라이드 할 수 있다.
 
+실제로 중요한것은 yml/properties 문서에서의 선언 순서이다. **선언이 아래에 나오면 위의 선언을 항상 일관성있게 override 한다**(기존에는 그렇지못했음).
+
 배포 모듈의 설정이 최종으로 선택된다. (명시적 명령행 오버라이드를 안한다면)
 
 ## 의존 모듈의 default 값
