@@ -1,6 +1,15 @@
 # Spring Boot 2.4 multi module properties & profile-group
 * [Spring Boot Config Data Migration Guide · spring-projects/spring-boot Wiki](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-Config-Data-Migration-Guide)
 
+## 기본 방식
+* 의존 모듈 : 프로젝트의 공통 코드를 가지고 있고, 다른 web/batch 등의 모듈에 의존성이 걸려서 배포되는 모듈
+* 배포 모듈 : web, batch, integration test 등 실제로 `bootJar` 를 만들어서 배포하는 모듈
+* 여기서 취하는 properties import 기능은 각 배포 모듈에서 여러 의존 모듈의 프라퍼티를 손쉽게 가져오는 방식을 구현하는 것이다.
+* 이렇게 하지 않으면 여러 배포 모듈에 의존 모듈의 프라퍼티값을 중복으로 넣게 된다.
+* Spring Boot 2.4 이전에는 `include` 기능을 복잡하게 사용했고, 이 때 property override 도 복잡한 방식으로 해야 했다.
+* 2.4 부터는 `spring.config.import` 와 `spring.profiles.group` 을 이용해 일관성있고 손쉽게 처리 가능하다.
+* 말단 모듈에서 `spring.config.import` 로 의존 모듈 `classpath:/모듈설정.yml` 형태로 import 하기만 하면 된다.
+
 ## 말단 모듈의 프라퍼티 override
 어떤 전략이든 말단 모듈(배포 모듈, web,batch,integration test 등)은 import 한
 다른 모듈의 프라퍼티를 자신의 프라퍼티 설정에서 오버라이드 할 수 있다.
@@ -60,7 +69,9 @@ profile-group 을 지정해준다.
 
 이 경우 말단 모듈이 종류별로 의존 모듈의 프로필을 선택가능해 진다.
 
-예) batch 말단 모듈에서는 m1-batch-local, web 말단 모듈에서는 m1-web-local 형태로 선택 가능. (그러나 이는 충분히 override 기법으로 대체 가능함.)
+* 예) batch 말단 모듈에서는 `m1-batch-local`, web 말단 모듈에서는 `m1-web-local` 형태로 선택 가능.
+* 그러나 이는 충분히 프로필을 일치시키고 말단 모듈에서 의존 모듈의 프라퍼티를 override 하는
+  기법으로 대체 가능함.
 
 ### 의존 모듈 application.yml
 ```
