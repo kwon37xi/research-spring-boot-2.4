@@ -1,4 +1,4 @@
-rootProject.name = 'research-springboot-2-3'
+rootProject.name = 'research-springboot-2-4'
 
 include "research-spring-data-jpa"
 include "research-spring-data-jdbc"
