@@ -9,6 +9,9 @@ SPRING_PROFILES_ACTIVE=local ./gradlew :profile-group:profile-group-web:bootRun
 
 # prod profile 로 실행
 SPRING_PROFILES_ACTIVE=prod ./gradlew :profile-group:profile-group-web:bootRun
+
+# 8080 이외의 다른 port 지정이 필요할 경우
+SPRING_PROFILES_ACTIVE=local SERVER_PORT=8888 ./gradlew :profile-group:profile-group-web:bootRun
 ```
 * http://localhost:8080 으로 접속하여 프라퍼티 값들을 확인해 본다.
 
