@@ -1,0 +1,8 @@
+jar.enabled = false
+bootJar.enabled = true
+
+dependencies {
+    api project(":profile-group:profile-group-module1")
+    api project(":profile-group:profile-group-module2")
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

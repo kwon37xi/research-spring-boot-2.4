@@ -1,0 +1,25 @@
+profile-group:
+    module1:
+        name: "ProfileGroup Module1 - default"
+        target: default-module1
+        pre-override: pgm1-ov-default
+---
+spring:
+    config:
+      activate:
+        on-profile: m1-local
+profile-group:
+    module1:
+        name: "ProfileGroup Module1 - local"
+        target: local-module1
+        pre-override: pgm1-ov-local
+---
+spring:
+    config:
+        activate:
+            on-profile: m1-prod
+profile-group:
+    module1:
+        name: "ProfileGroup Module1 - prod"
+        target: prod-module1
+        pre-override: pgm1-ov-prod

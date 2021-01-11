@@ -1,0 +1,44 @@
+spring:
+    config:
+        import: "classpath:/module1.yml,classpath:/module2.yml"
+    profiles:
+        group:
+            local: "m1-local,m2-local"
+            prod: "m1-prod,m2-prod"
+---
+spring:
+  config:
+      activate:
+          on-profile: local
+
+profile-group:
+    module1:
+        pre-override: web-override-mod1-local
+    module2:
+        pre-override: web-override-mod2-local
+
+
+debug: true
+logging:
+    level:
+        org.springframework: DEBUG
+---
+spring:
+    config:
+        activate:
+            on-profile: prod
+profile-group:
+    module1:
+        pre-override: web-override-mod1-prod
+    module2:
+        pre-override: web-override-mod2-prod
+---
+spring:
+    config:
+        activate:
+            on-profile: def
+profile-group:
+    module1:
+        pre-override: web-override-mod1-def
+    module2:
+        pre-override: web-override-mod2-def

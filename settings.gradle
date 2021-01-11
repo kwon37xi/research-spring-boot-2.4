@@ -6,3 +6,7 @@ include "research-spring-webmvc"
 include "research-jackson-json"
 include "research-spring-cloud-open-feign"
 include "research-spring-webmvc-squiggly"
+
+include "profile-group:profile-group-module1"
+include "profile-group:profile-group-module2"
+include "profile-group:profile-group-web"

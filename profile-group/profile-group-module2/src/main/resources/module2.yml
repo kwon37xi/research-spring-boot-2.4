@@ -1,0 +1,25 @@
+profile-group:
+    module2:
+        name: "ProfileGroup Module2 - default"
+        target: default-module2
+        pre-override: pgm2-ov-default
+---
+spring:
+    config:
+      activate:
+        on-profile: m2-local
+profile-group:
+    module2:
+        name: "ProfileGroup Module2 - local"
+        target: local-module2
+        pre-override: pgm2-ov-local
+---
+spring:
+    config:
+        activate:
+            on-profile: m2-prod
+profile-group:
+    module2:
+        name: "ProfileGroup Module2 - prod"
+        target: prod-module2
+        pre-override: pgm2-ov-prod
