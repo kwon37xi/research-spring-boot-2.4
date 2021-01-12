@@ -19,7 +19,8 @@ public class LoadedConfigFileListener implements ApplicationListener<Application
     public void onApplicationEvent(ApplicationReadyEvent event) {
         MutablePropertySources propertySources = event.getApplicationContext().getEnvironment().getPropertySources();
         Iterator<PropertySource<?>> propertySourceIterator = propertySources.iterator();
-        propertySourceIterator.forEachRemaining(propertySource -> log.info("Successfully loaded: \"{}\" ({}) into application context", propertySource.getName(), propertySource.getSource()));
+        propertySourceIterator.forEachRemaining(propertySource -> log.info("Successfully loaded: \"{}\" ({}) into application context",
+            propertySource.getName(), propertySource.getSource()));
     }
 
     @Override
